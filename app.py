@@ -4,7 +4,7 @@ import dash_html_components as html
 import plotly.graph_objs as go
 
 ########### Define your variables
-beers=['Adelaide', 'Sydney', 'Gold Coast', 'Brisbane']
+cities=['Adelaide', 'Sydney', 'Gold Coast', 'Brisbane']
 ibu_values=[40, 100, 65, 10]
 abv_values=[6.5, 2.0, 4.0, 8.0]
 color1='lightgreen'
@@ -19,25 +19,25 @@ sourceurl='https://www.australia.com/en-us'
 
 ########### Set up the chart
 bitterness = go.Bar(
-    x=beers,
+    x=cities,
     y=ibu_values,
     name=label1,
     marker={'color':color1}
 )
 alcohol = go.Bar(
-    x=beers,
+    x=cities,
     y=abv_values,
     name=label2,
     marker={'color':color2}
 )
 
-beer_data = [bitterness, alcohol]
-beer_layout = go.Layout(
+cities_data = [bitterness, alcohol]
+cities_layout = go.Layout(
     barmode='group',
     title = mytitle
 )
 
-beer_fig = go.Figure(data=beer_data, layout=beer_layout)
+cities_fig = go.Figure(data=beer_data, layout=cities_layout)
 
 
 ########### Initiate the app
